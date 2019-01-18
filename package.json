@@ -1,0 +1,23 @@
+{
+  "name": "capdiab",
+  "version": "1.0.0",
+  "description": "Diabetes Education games site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlal123/CapDiab.git"
+  },
+  "author": "Mangza Lal, Teddy Randby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlal123/CapDiab/issues"
+  },
+  "homepage": "https://github.com/mlal123/CapDiab#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
