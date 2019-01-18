@@ -1,6 +1,14 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 const port = process.env.PORT || 8000
+
+
+
+// Static files will be stored in 'public'
+app.use( express.static('public'));
+
+app.use('/static', express.static('public'));
 
 
 // Home Page
@@ -13,7 +21,6 @@ app.get('/', (req,res) => {
 // Maggie's Game
 app.get('/maggie', (req,res) => {
 
-  console.log ("rendering maggie...");
   res.render('maggie.pug');
 
 });
@@ -21,7 +28,6 @@ app.get('/maggie', (req,res) => {
 // Sugar sugarsugar
 app.get('/sugarsugar', (req,res) => {
 
-  console.log ("rendering sugar sugar...");
   res.render('sugarsugar.pug');
 
 });
