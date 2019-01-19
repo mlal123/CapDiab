@@ -1,9 +1,8 @@
 
 Head
-  script(src = '../static/scripts/sugarsugar.js')
-  script(src = 'matter.js');
   styles
     include ../public/styles/sugarsugar.css
-
+  each script in scripts 
+    script(src = script)
 Body
   | Welcome to Sugar Sugar 3!

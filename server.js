@@ -2,13 +2,17 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const port = process.env.PORT || 8000
-
+const matter = require('matter-js');
 
 
 // Static files will be stored in 'public'
 app.use( express.static('public'));
 
 app.use('/static', express.static('public'));
+
+// set views folder
+app.set('views', 'views');
+
 
 
 // Home Page
@@ -25,10 +29,14 @@ app.get('/maggie', (req,res) => {
 
 });
 
-// Sugar sugarsugar
+// sugarsugar
 app.get('/sugarsugar', (req,res) => {
 
-  res.render('sugarsugar.pug');
+  sugarScripts = [];
+  sugarScripts.push('../static/scripts/sugarsugar.js')
+  sugarScripts.push('../static/scripts/matter.js');
+
+  res.render('sugarsugar.pug', { scripts: sugarScripts });
 
 });
 
