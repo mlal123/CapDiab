@@ -1,6 +1,8 @@
 
 console.log("hello");
 
+document.ready( function() {
+
 // module aliases
 var Engine = Matter.Engine,
     Render = Matter.Render,
@@ -29,3 +31,5 @@ Engine.run(engine);
 
 // run the renderer
 Render.run(render);
+
+});
