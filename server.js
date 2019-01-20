@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const port = process.env.PORT || 8000
-const matter = require('matter-js');
+
+var options = {};
 
 
 // Static files will be stored in 'public'
@@ -33,8 +34,9 @@ app.get('/maggie', (req,res) => {
 app.get('/sugarsugar', (req,res) => {
 
   sugarScripts = [];
-  sugarScripts.push('../static/scripts/sugarsugar.js')
   sugarScripts.push('../static/scripts/matter.js');
+  sugarScripts.push('../static/scripts/sugarsugar.js')
+
 
   res.render('sugarsugar.pug', { scripts: sugarScripts });
 
