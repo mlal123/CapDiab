@@ -33,12 +33,9 @@ app.get('/maggie', (req,res) => {
 // sugarsugar
 app.get('/sugarsugar', (req,res) => {
 
-  sugarScripts = [];
-  sugarScripts.push('../static/scripts/matter.js');
-  sugarScripts.push('../static/scripts/sugarsugar.js')
 
 
-  res.render('sugarsugar.pug', { scripts: sugarScripts });
+  res.render('sugarsugar/sugarsugar.pug');
 
 });
 
