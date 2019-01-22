@@ -1,0 +1,130 @@
+body {
+  background-color: light-grey;
+}
+
+h1 {
+  text-align: center;
+}
+
+*
+{
+  font-family: sans-serif;
+}
+
+#big_container {
+  position: relative;
+  margin: auto;
+  height: 70%;
+  width: 60%;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+#petImage {
+  width: 30%;
+  height: 30%;
+  position: relative;
+  border: 1px solid black;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hud {
+  width: 75%;
+  height: 30%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  text-align: center;
+}
+
+#labels {
+  radius: 5px;
+  position: relative;
+  width: 20%;
+  height: 40%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.label {
+  height: 30%;
+  margin: auto;
+}
+
+#meters {
+  width: 50%;
+  height: 40%;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#mtrH {
+  background-color: green;
+  border: 1px solid green;
+  height: 30%;
+  width: 100%;
+}
+
+#mtrF {
+  background-color: orange;
+  border: 1px solid orange;
+  height: 30%;
+  width: 100%;
+}
+
+#mtrI {
+  background-color: blue;
+  border: 1px solid blue;
+  height: 30%;
+  width: 100%;
+}
+
+#buttons {
+  height: 40%;
+  width: 20%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  radius: 5px;
+  text-align: center;
+}
+
+.feedBtn {
+  background-color: #04B4AE;
+  color: #F2F2F2;
+  height: 38%;
+  margin: auto;
+  width: 100%;
+}
+
+.feedBtn:hover
+{
+  background-color: #01DFD7;
+}
+
+.feedBtn:active
+{
+  background-color: #088A85;
+}
+
+.alignCtr {
+  text-align: center;
+}
+
+.backMe {
+  background-color: grey;
+}
+
+.cornered {
+  border-radius: 5px;
+}

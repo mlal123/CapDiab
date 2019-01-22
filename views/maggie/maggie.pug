@@ -1,0 +1,33 @@
+html
+  head
+    style
+      include ../../public/styles/maggie/maggie.css
+    script
+      include ../../public/scripts/maggie/maggie.js
+  body
+    h1
+      | Welcome to Maggie's Game
+    div(id='big_container')
+
+      div(id='petImage' class='alignCtr backMe')
+        div(id='petTop') ^^^^^^^^
+        div(id='petEyes') o....o
+        div(id='petMouth') =v====v=
+        div(id='petBtm') vvvvvvvv
+
+      div(id='hud')
+        div(id='labels' class='floatLeft')
+          div(id='labelH' class='label') Health
+          div(id='labelF' class='label') Food
+          div(id='labelI' class='label') Insulin
+
+        div(id='meters' class='floatLeft')
+          div(id='mtrH' class='cornered heightFix')
+          div(id='mtrF' class='cornered heightFix')
+          div(id='mtrI' class='cornered heightFix')
+
+        div(id='buttons' class='floatLeft')
+          div(id='btnF' class='feedBtn alignCtr cornered') Feed
+          div(id='btnI' class='feedBtn alignCtr cornered') Give Shot
+
+      div(id='feedback' class='alignCtr backMe cornered')
