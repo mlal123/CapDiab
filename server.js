@@ -26,7 +26,7 @@ app.get('/', (req,res) => {
 // Maggie's Game
 app.get('/maggie', (req,res) => {
 
-  res.render('maggie.pug');
+  res.render('maggie/maggie.pug');
 
 });
 
