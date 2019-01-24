@@ -22,10 +22,22 @@ class Model {
       engine: this.engine
   });
   // create two boxes and a grounds
-  var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+  var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true
+ });
 
-  var path = [];
+  var mouse = Matter.Mouse.create(this.render.canvas),
+    mouseConstraint = Matter.MouseConstraint.create(this.engine, {
+        mouse: mouse,
+        constraint: {
+            stiffness: 0.2,
+            render: { visible: false },
+            collisionFilter: { category: 10  }
+        }
+    });
 
+
+  // add mouse interactivity
+  World.add(this.world,mouseConstraint);
 
   // add all of the bodies to the world
   World.add(this.world, [ground]);
