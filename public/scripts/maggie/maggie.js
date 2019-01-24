@@ -1,3 +1,25 @@
+class Avatar {
+  constructor(){
+    this.name = "maggie";
+  }
+
+  display(){
+    ellipse(100, 100, 150, 150);
+  }
+}
+//-----------------------------------------------------------------------------------------//
+let maggie;
+  function setup() {
+    var canvas = createCanvas(200, 200);
+    canvas.parent("petImage");
+    maggie = new Avatar();
+  }
+
+  function draw() {
+    background(50, 89, 100);
+    maggie.display();
+  }
+
  document.addEventListener('DOMContentLoaded',function(){
 
      //Variables
@@ -51,10 +73,10 @@
          getBtnI =     document.getElementById('btnI'),
 
 		 	//Get eyes to express status
-		 getEyes =		document.getElementById('petEyes'),
+		 /*getEyes =		document.getElementById('petEyes'),
 		 eyesOK =		"o....o",
 	 	 eyesSick = 	"@....@",
-		 eyesDead =		"x....x",
+		 eyesDead =		"x....x",*/
 
 		 	//Get style for the feedback div
 	 	 getStyleFb = 	document.getElementById('feedback').style;
@@ -245,17 +267,17 @@
      }
 
 	 function warnF(){
-		 getEyes.innerHTML = eyesSick;
+		 //getEyes.innerHTML = eyesSick;
 		 getStyleF.border = bdrStart + clrWarn;
 	 }
 
 	 function warnI(){
-		 getEyes.innerHTML = eyesSick;
+		 //getEyes.innerHTML = eyesSick;
 		 getStyleI.border = bdrStart + clrWarn;
 	 }
 
 	 function warnH(){
-		 getEyes.innerHTML = eyesSick;
+		 //getEyes.innerHTML = eyesSick;
 		 getStyleH.border = bdrStart + clrWarn;
 	 }
 
@@ -268,12 +290,12 @@
 	 }
 
 	 function okH(){
-		 getEyes.innerHTML = eyesOK;
+		 //getEyes.innerHTML = eyesOK;
 		 getStyleH.border = bdrStart + clrDfltH;
 	 }
 
      function ending(){
-		 getEyes.innerHTML = eyesDead;
+		 //getEyes.innerHTML = eyesDead;
 		 getStyleFb.display = 'block';
      }
 

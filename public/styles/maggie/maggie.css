@@ -23,12 +23,11 @@ h1 {
 }
 
 #petImage {
-  width: 30%;
-  height: 30%;
+  width: 50%;
+  height: 50%;
   position: relative;
   border: 1px solid black;
   margin: auto;
-  border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;

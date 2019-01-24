@@ -4,16 +4,13 @@ html
       include ../../public/styles/maggie/maggie.css
     script
       include ../../public/scripts/maggie/maggie.js
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js")
   body
     h1
       | Welcome to Maggie's Game
     div(id='big_container')
 
-      div(id='petImage' class='alignCtr backMe')
-        div(id='petTop') ^^^^^^^^
-        div(id='petEyes') o....o
-        div(id='petMouth') =v====v=
-        div(id='petBtm') vvvvvvvv
+      div(id='petImage' class='alignCtr')
 
       div(id='hud')
         div(id='labels' class='floatLeft')
