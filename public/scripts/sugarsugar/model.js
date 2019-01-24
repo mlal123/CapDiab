@@ -22,8 +22,7 @@ class Model {
       engine: this.engine
   });
   // create two boxes and a grounds
-  var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true
- });
+  var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true} );
 
   var mouse = Matter.Mouse.create(this.render.canvas),
     mouseConstraint = Matter.MouseConstraint.create(this.engine, {
@@ -31,7 +30,6 @@ class Model {
         constraint: {
             stiffness: 0.2,
             render: { visible: false },
-            collisionFilter: { category: 10  }
         }
     });
 
@@ -60,13 +58,10 @@ addSugar_Crystal(x,y) {
 }
 
 generateSugars() {
+  
   for ( let food of this.food_items ) {
-    var x = food.body.position.x;
-    var y = food.body.position.y;
-    this.addSugar_Crystal(
-      x += random(-10,10),
-      y += random(-10,10)
-    );
+
+  food.generateSugars();
 
   };
 }
