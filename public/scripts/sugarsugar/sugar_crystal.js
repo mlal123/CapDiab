@@ -1,6 +1,6 @@
 class Sugar_Crystal {
   constructor(x,y, world) {
-    this.body = Matter.Bodies.circle(x,y,3, {
+    this.body = Matter.Bodies.circle(x,y,5, {
 
       collisionFilter: { category: 10 }
 
@@ -8,5 +8,6 @@ class Sugar_Crystal {
 
 
     Matter.World.add(world, this.body);
+
   }
 }

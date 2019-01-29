@@ -10,19 +10,4 @@ class Food_Item {
 
   }
 
-  addSugar_Crystal(x,y) {
-    var sugar = new Sugar_Crystal(x,y,this.world);
-  }
-
-  generateSugars() {
-
-      var x = this.body.position.x;
-      var y = this.body.position.y;
-      this.addSugar_Crystal(
-        x += random(-10,10),
-        y += random(-10,10)
-      );
-
-
-  }
 };
