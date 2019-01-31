@@ -10,11 +10,14 @@ h1 {
 {
   font-family: sans-serif;
 }
+#canvas {
+  #border: 5px solid red;
+}
 
 #big_container {
   position: relative;
   margin: auto;
-  height: 70%;
+  height: 90%;
   width: 60%;
   border: 2px solid black;
   border-radius: 5px;
@@ -24,9 +27,8 @@ h1 {
 
 #petImage {
   width: 50%;
-  height: 50%;
+  height: 80%;
   position: relative;
-  border: 1px solid black;
   margin: auto;
   display: flex;
   flex-direction: column;
