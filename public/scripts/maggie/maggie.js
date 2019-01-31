@@ -1,10 +1,11 @@
- document.addEventListener('DOMContentLoaded',function(){
+document.addEventListener('DOMContentLoaded',function(){
+
    //Width and height for our canvas
-var canvasWidth = 650;
+var canvasWidth = 560;
 var canvasHeight = 500;
 
 //the with and height of our spritesheet
-var spriteWidth = 864;
+var spriteWidth = 560;
 var spriteHeight =500;
 
 //we are having two rows and 8 cols in the current sprite sheet
@@ -61,15 +62,36 @@ var ctx = canvas.getContext("2d");
 var character = new Image();
 
 //Setting the source to the image file
-character.src = "../static/sprites/png/cat/deadCat.png";
+character.src = "../static/sprites/png/cat/idleCat.png";
 
 function updateFrame(){
  //Updating the frame index
  curFrame = ++curFrame % frameCount;
-
  //Calculating the x coordinate for spritesheet
  srcX = curFrame * width;
- //ctx.clearRect(x,y,width,height);
+ ctx.clearRect(x,y,width,height);
+}
+
+function change_char_src(src){
+  character.src = src;
+}
+
+function animateDead(){
+  ctx.clearRect(x,y,width,height);
+  clearInterval(interval);
+  change_char_src("../static/sprites/png/cat/deadCat.png");
+  console.log("animating dead");
+  var timesRun = 0;
+  var deadInterval = setInterval(function(){
+    timesRun += 1;
+    console.log(timesRun);
+    if (timesRun == 9){
+      clearInterval(deadInterval);
+    }else{
+      draw();
+    }
+  }, 500);
+
 }
 
 function draw(){
@@ -82,7 +104,14 @@ function draw(){
 character.onload = function(){
   ctx.drawImage(character,srcX,srcY,width,height,x,y,width,height);
 }
-//setInterval(draw,100);
+var interval = setInterval(function(){
+  if (alive == false){
+    console.log("my boy is dead");
+    clearInterval(interval);
+  }
+  draw();
+}, 300);
+
 
 //---------------------------------------------------------------------//
      //Variables
@@ -101,7 +130,7 @@ character.onload = function(){
 
 		 	//When vitamins fall below threshold, pet starts losing health
          threshold =    ctMaxH * 0.6,
-         points =       2,
+         points =       8,
          widther =      4,
 
 		 	//When conditions are dangerous, affected stat bars will be hilited in red
@@ -144,24 +173,28 @@ character.onload = function(){
 		 	//Get style for the feedback div
 	 	 getStyleFb = 	document.getElementById('feedback').style;
 
-
 	 getStyleFb.display = 'none';
 	 meterWidth();
 
-     //At set intervals, vitamin M decreases.
-     setInterval(function(){
+     //At set intervals, Food decreases.
+     var foodInterval = setInterval(function(){
 		 if(alive == true){
 				loseF();
 			 	checkDangerF();
-	 	}
+	 	 }else{
+       clearInterval(foodInterval);
+     }
+
   },intervalF);
 
      //At set intervals, vitamin R decreases.
-     setInterval(function(){
+     var insulinInterval = setInterval(function(){
 		 if(alive == true){
 				loseI();
 			 	checkDangerI();
-		 }
+		 }else{
+       clearInterval(insulinInterval);
+     }
    },intervalI);
 
      /*
@@ -170,7 +203,7 @@ character.onload = function(){
 	 Meter graphics are adjusted as applicable.
 	 If the pet is dead, then the ending events trigger.
 	 */
-     setInterval(function(){
+     var healthInterval = setInterval(function(){
 
 		 meterWidth();
 		 checkDangerH();
@@ -212,6 +245,8 @@ character.onload = function(){
      if(alive == false)
         {
             ending();
+            clearInterval(healthInterval);
+            console.log("alive is false now");
         }
 
      },intervalH);
@@ -360,6 +395,7 @@ character.onload = function(){
      function ending(){
 		 //getEyes.innerHTML = eyesDead;
 		 getStyleFb.display = 'block';
+     animateDead();
      }
 
   });
